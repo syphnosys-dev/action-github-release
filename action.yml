@@ -1,0 +1,33 @@
+name: "GitHub Release Creator"
+description: "Create GitHub releases programmatically"
+author: "vipulkumar"
+
+inputs:
+  tag_name:
+    description: "The name of the tag"
+    required: true
+  release_name:
+    description: "The name of the release"
+    required: false
+  body:
+    description: "Release notes"
+    required: false
+  draft:
+    description: "Create a draft release"
+    default: "false"
+    required: false
+  prerelease:
+    description: "Mark as prerelease"
+    default: "false"
+    required: false
+  token:
+    description: "GitHub Token"
+    required: true
+
+runs:
+  using: "node16"
+  main: "index.js"
+
+branding:
+  icon: "tag"
+  color: "purple"
